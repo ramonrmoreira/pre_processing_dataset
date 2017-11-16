@@ -3,8 +3,8 @@ clear all
 close all
 clc
 %%
-files_path_in = {'C:\Users\Ramon\Documents\iVisionLab\Tratamento ReplayAttack\Tratamento\hand\'}
-files_path_out = {'C:\Users\Ramon\Documents\iVisionLab\Tratamento ReplayAttack\Tratamento\outputhand\'}
+files_path_in = {'inputpath'}
+files_path_out = {'outputpath'}
 %%
 
 for i = 1:numel(files_path_in)
