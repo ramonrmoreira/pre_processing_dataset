@@ -8,12 +8,12 @@ files_path_out = {'outputpath'}
 %%
 
 for i = 1:numel(files_path_in)
-    files = dir([files_path_in{i},'*.mov'])
+    files = dir([files_path_in{i},'*.avi'])
     for j = 1:numel(files)
         j
         [pathstr, name, ext] = fileparts(files(j).name);
         name
-        video_file = [files_path_in{i}, name, '.mov'];
+        video_file = [files_path_in{i}, name, '.avi'];
         if ~exist(strcat(files_path_out{i},name),'dir')
             Faces = Extract_faces(video_file);
             if Faces.flag >= 35
