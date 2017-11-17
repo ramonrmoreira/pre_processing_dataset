@@ -3,8 +3,8 @@ clear all
 close all
 clc
 %%
-files_path_in = {'inputpath'}
-files_path_out = {'outputpath'}
+files_path_in = {'/mnt/hd-sdb1/rogerio/datasets/OULU_NPU/Dev_files/'}
+files_path_out = {'mnt/hd-sdb1/ramon/pre_processing_dataset/output_OULU/'}
 %%
 
 for i = 1:numel(files_path_in)
