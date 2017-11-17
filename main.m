@@ -1,10 +1,10 @@
-# pre_processing_dataset
+% pre_processing_dataset
 clear all
 close all
 clc
 %%
 files_path_in = {'/mnt/hd-sdb1/rogerio/datasets/OULU_NPU/Dev_files/'}
-files_path_out = {'mnt/hd-sdb1/ramon/pre_processing_dataset/output_OULU/'}
+files_path_out = {'/mnt/hd-sdb1/ramon/output_OULU/'}
 %%
 
 for i = 1:numel(files_path_in)
@@ -21,7 +21,7 @@ for i = 1:numel(files_path_in)
                 for a = 1:size(Faces.data,2)
                     h = size(Faces.data{a});
 		                if h(1) > 0
-                        imwrite(Faces.data{a},strcat(files_path_out{i},name,'\',num2str(a),'.jpg'));
+                        imwrite(Faces.data{a},strcat(files_path_out{i},name,'/',num2str(a),'.jpg'));
                     end
                 end
             end
