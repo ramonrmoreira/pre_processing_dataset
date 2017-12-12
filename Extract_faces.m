@@ -24,7 +24,6 @@ function Faces = Extract_faces(file_vid, file_eye_pos)
 	
 	
 	for iframe = 1:55
-
 	
 		% read the input image
 		%I = readFrame(vid);
