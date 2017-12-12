@@ -23,7 +23,9 @@ function Faces = Extract_faces(file_vid, file_eye_pos)
 	landconfEyebrow = 2;
 	
 	
-	for iframe = 1:55
+	while hasFrame(vid)
+	
+	iframe = iframe + 1;
 	
 		% read the input image
 		%I = readFrame(vid);
@@ -36,11 +38,11 @@ function Faces = Extract_faces(file_vid, file_eye_pos)
             A = imrotate(A, angle_rotation);
         end
         
-		I = rgb2ntsc(A);
+		%I = rgb2ntsc(A);
 		%I = imresize(I, [224,224]);
 	
-		[imgFace, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow] = detectFacialRegions(I);
-		[A, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow] = detectFacialRegions(A);
+		[imgFace, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow] = detectFacialRegions(A);
+		%[A, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow] = detectFacialRegions(A);
 	
 	
 		
