@@ -14,8 +14,9 @@ for i = 1:numel(files_path_in)
         [pathstr, name, ext] = fileparts(files(j).name);
         name
         video_file = [files_path_in{i}, name, '.avi'];
+        eye_position_file = [files_path_in{i}, name, '.txt'];
         if ~exist(strcat(files_path_out{i},name),'dir')
-            Faces = Extract_faces(video_file);
+            Faces = Extract_faces(video_file, eye_position_file);
             if Faces.flag >= 35
                 mkdir(strcat(files_path_out{i},name))
                 for a = 1:size(Faces.data,2)
