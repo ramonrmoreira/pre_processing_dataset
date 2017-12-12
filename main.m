@@ -3,13 +3,13 @@ clear all
 close all
 clc
 %%
-files_path_in = {'/data/rogerio/datasets/OULU_NPU/Test_files/'}
-files_path_out = {'/data/ramon/output_OULU/Test_files/'}
+files_path_in = {'../Dev_files/'}
+files_path_out = {'../Dev_files/output/'}
 %%
 
 for i = 1:numel(files_path_in)
     files = dir([files_path_in{i},'*.avi'])
-    for j = 371:numel(files)
+    for j = 1:numel(files)
         j
         [pathstr, name, ext] = fileparts(files(j).name);
         name
