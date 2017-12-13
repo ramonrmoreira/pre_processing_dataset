@@ -1,8 +1,6 @@
-function Faces = Extract_faces(file_vid, file_eye_pos)
+function Faces = Extract_faces(file_vid)
 
 
-    fileID = fopen(file_eye_pos);
-    eye_pos = textscan(fileID, '%d %d %d %d %d', 'Delimiter', ',');
 	vid = VideoReader(file_vid);
 	iframe = 0;
 	Faces.flag = 0;
@@ -25,18 +23,12 @@ function Faces = Extract_faces(file_vid, file_eye_pos)
 	
 	while hasFrame(vid)
 	
-	iframe = iframe + 1;
+	iframe = iframe + 1
 	
 		% read the input image
 		%I = readFrame(vid);
         A = readFrame(vid);
-        
-        if (eye_pos{2}(iframe) ~= 0 && eye_pos{3}(iframe) ~= 0 && eye_pos{4}(iframe) ~= 0 && eye_pos{5}(iframe) ~= 0)
-            opposite = double(eye_pos{5}(iframe) - eye_pos{3}(iframe));
-            adjacent = double(eye_pos{4}(iframe) - eye_pos{2}(iframe));
-            angle_rotation = atand(opposite/adjacent);
-            A = imrotate(A, angle_rotation);
-        end
+       
         
 		%I = rgb2ntsc(A);
 		%I = imresize(I, [224,224]);
