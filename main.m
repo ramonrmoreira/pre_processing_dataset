@@ -20,9 +20,9 @@ for i = 1:numel(files_path_in)
                 mkdir(strcat(files_path_out{i},name))
                 for a = 1:size(Faces.data,2)
                     h = size(Faces.data{a});
-		                if h(1) > 0
+		            if h(1) > 0
                         imwrite(Faces.data{a},strcat(files_path_out{i},name,'/',num2str(a),'.jpg'));
-                        end
+                    end
                 end
             end
         end

@@ -34,9 +34,9 @@ function Faces = Extract_faces(file_vid)
 		%I = imresize(I, [224,224]);
 	
 		[imgFace, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow] = detectFacialRegions(A);
-		%[A, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow] = detectFacialRegions(A);
+		A = imgFace;
 	
-	
+
 		
 		if imgFace(1,1) > 0
 		if LeftEye(1,1) > 0
